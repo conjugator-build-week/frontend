@@ -12,3 +12,7 @@ function App() {
 }
 
 export default App;
+
+//Lightning Blue: #51d0de
+//Lightning Purple: #bf4aa8
+//Brain Wrinkle White: #d9d9d9
