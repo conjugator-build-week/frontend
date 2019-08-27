@@ -1,4 +1,0 @@
-[build]
-base = "conjugator-io/"
-publish = "conjugator-io/build/"
-command = "yarn build"
