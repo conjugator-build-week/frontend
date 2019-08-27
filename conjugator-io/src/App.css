@@ -59,6 +59,14 @@
   display: flex;
 }
 
+.submit {
+
+}
+
+.verb-entry {
+  display: flex;
+}
+
 h3 {
   margin: 0;
   font-size: 2rem;
