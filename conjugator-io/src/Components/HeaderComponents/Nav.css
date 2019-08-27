@@ -1,0 +1,13 @@
+.nav-bar {
+  background-color: blue;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: .5rem;
+}
+
+.link {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}

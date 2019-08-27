@@ -1,8 +1,14 @@
 import React from 'react';
 
 function Streak() {
-  return (
 
+  const [streak, setStreak] = useState('');
+
+  return (
+    <div>
+      <p>Current Streak:</p>
+      <h3></h3>
+    </div>
   )
 }
 

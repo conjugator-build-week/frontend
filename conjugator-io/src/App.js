@@ -1,12 +1,14 @@
 import React from 'react';
 import './App.css';
 
+import Nav from './Components/HeaderComponents/Nav.js';
+import Header from './Components/HeaderComponents/Header.js';
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      App
-      </header>
+      <Nav />
+      <Header />
     </div>
   );
 }
