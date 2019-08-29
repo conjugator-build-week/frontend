@@ -19,7 +19,7 @@ function Verb() {
     .then(res => {
       const vari = Object.entries(res.data);
       // console.log(vari[getRandom(1)]);
-      const obj = vari[getRandom(1)];
+      const obj = vari[getRandom(1000)];
       setConj(obj[0]); //DONE
       const newArr = obj[1];
       const makeArr = newArr[0];
@@ -46,7 +46,16 @@ function Verb() {
       <h3>{tense}/{mood}</h3>
       <form className="verb-entry">
         <p>{perf}</p>
-        <input type="text" placeholder="Enter conjugated verb..." />
+        <input
+          className="field"
+          type="text"
+          placeholder="Enter conjugated verb..."
+        />
+        <input
+          className="sub-button"
+          type="submit"
+          value="Submit"
+        />
       </form>
     </div>
   )
