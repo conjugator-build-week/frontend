@@ -10,7 +10,6 @@ function Card() {
     <div className="con-card">
       <Streak />
       <Verb />
-      <Submit />
     </div>
   )
 }
