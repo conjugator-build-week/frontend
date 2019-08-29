@@ -35,6 +35,25 @@ function Verb() {
     })
   }, [])
 
+  function VerbCheck(e) {
+
+    const [entry, setEntry] = useState(''); //DONE
+
+    setEntry({value: e.target.value})
+
+    e.preventDefault();
+
+    if(entry == conj) {
+      return (
+        alert("Correct!")
+      )
+    } else {
+      return (
+        alert("Incorrect :(")
+      )
+    }
+  }
+
   return (
     <div className="verb">
       <p>Verb:</p>
@@ -45,9 +64,10 @@ function Verb() {
       <p>Tense:</p>
       <h3>{tense}/{mood}</h3>
       <form className="verb-entry">
-        <p>{perf}</p>
+        <p className="performer">{perf}</p>
         <input
           className="field"
+          id="verb"
           type="text"
           placeholder="Enter conjugated verb..."
         />
@@ -55,8 +75,10 @@ function Verb() {
           className="sub-button"
           type="submit"
           value="Submit"
+          onSubmit={VerbCheck()}
         />
       </form>
+
     </div>
   )
 }

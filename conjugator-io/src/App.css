@@ -68,7 +68,11 @@
 }
 
 .performer {
-  width: 33%;
+  width: 35%;
+}
+
+.field {
+  width: 35%;
 }
 
 .sub-button {
