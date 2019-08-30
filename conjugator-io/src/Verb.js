@@ -35,10 +35,12 @@ function Verb(props) {
     })
   }, [])
 
+  console.log(conj);
+
   const [entry, setEntry] = useState(''); //DONE
 
   const changeHandler = event => {
-    setEntry({ [event.target.name]: event.target.value })
+    setEntry({ ...entry, [event.target.name]: event.target.value })
 }
 
   const submitWord = event => {
@@ -49,6 +51,10 @@ function Verb(props) {
       alert('Incorrect :(')
     }
 }
+
+  const reLoad = () => {
+    window.location.reload();
+  }
 
   return (
     <div className="verb">
@@ -71,8 +77,9 @@ function Verb(props) {
         <input
           className="sub-button"
           type="submit"
-          onSubmit={submitWord}
+          onClick={submitWord}
         />
+        <button onClick={reLoad}>Next</button>
       </form>
 
     </div>
