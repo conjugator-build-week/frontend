@@ -35,24 +35,24 @@ function Verb() {
     })
   }, [])
 
-  function VerbCheck(e) {
-
-    const [entry, setEntry] = useState(''); //DONE
-
-    setEntry({value: e.target.value})
-
-    e.preventDefault();
-
-    if(entry == conj) {
-      return (
-        alert("Correct!")
-      )
-    } else {
-      return (
-        alert("Incorrect :(")
-      )
-    }
-  }
+  // function VerbCheck(e) {
+  //
+  //   const [entry, setEntry] = useState(''); //DONE
+  //
+  //   setEntry({value: e.target.value})
+  //
+  //   e.preventDefault();
+  //
+  //   if(entry == conj) {
+  //     return (
+  //       alert("Correct!")
+  //     )
+  //   } else {
+  //     return (
+  //       alert("Incorrect :(")
+  //     )
+  //   }
+  // }
 
   return (
     <div className="verb">
@@ -75,7 +75,7 @@ function Verb() {
           className="sub-button"
           type="submit"
           value="Submit"
-          onSubmit={VerbCheck()}
+
         />
       </form>
 
@@ -84,3 +84,5 @@ function Verb() {
 }
 
 export default Verb;
+
+//onSubmit={VerbCheck()}
