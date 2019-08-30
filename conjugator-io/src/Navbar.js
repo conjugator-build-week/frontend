@@ -1,6 +1,7 @@
-import React from 'react';
-import { Container, Menu } from 'semantic-ui-react';
+import React, { Component } from 'react';
+import { Container, Menu} from 'semantic-ui-react';
 import styled from 'styled-components';
+import LoginModal from './LoginModal';
 
 // Styled Components
 const NavHeader = styled.h1`
@@ -9,25 +10,25 @@ const NavHeader = styled.h1`
     padding-top: 7%;
 `
 
-export default function Navbar() {
+class Navbar extends Component {
 
-    // Homepage
-    return(
-    <div class="navbar">
-        <Menu>
-            <Container>
-                {/* Nav Header */}
-                <Menu.Header position="left">
-                    <NavHeader>Spanish Conjugator</NavHeader>
-                </Menu.Header>
-    
-                {/* Login Button */}
-                <Menu.Item position="right" name="login">
-                    Login
-                </Menu.Item>
+    render(){
+        return(
+            <div className="navbar">
+                <Menu>
+                    <Container>
+                        <Menu.Header style={{color: '#3B5895'}} position="left">
+                            <NavHeader>Spanish Conjugator</NavHeader>
+                        </Menu.Header>
 
-            </Container>
-        </Menu>
-    </div>
-    )
+                        <Menu.Item position="right" style={{color: '#3B5895'}}>
+                            <LoginModal />
+                        </Menu.Item>
+                    </Container>
+                </Menu>
+            </div>
+        )
+    }
 };
+
+export default Navbar;
