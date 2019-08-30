@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Verb() {
+function Verb(props) {
 
   function getRandom(max) {
     return Math.floor(Math.random()*Math.floor(max));
@@ -23,7 +23,7 @@ function Verb() {
       setConj(obj[0]); //DONE
       const newArr = obj[1];
       const makeArr = newArr[0];
-      console.log(makeArr);
+      // console.log(makeArr);
       setInf(makeArr.infinitive); //DONE
       setTense(makeArr.tense); //DONE
       setDef(makeArr.translation); //DONE
@@ -35,24 +35,20 @@ function Verb() {
     })
   }, [])
 
-  // function VerbCheck(e) {
-  //
-  //   const [entry, setEntry] = useState(''); //DONE
-  //
-  //   setEntry({value: e.target.value})
-  //
-  //   e.preventDefault();
-  //
-  //   if(entry == conj) {
-  //     return (
-  //       alert("Correct!")
-  //     )
-  //   } else {
-  //     return (
-  //       alert("Incorrect :(")
-  //     )
-  //   }
-  // }
+  const [entry, setEntry] = useState(''); //DONE
+
+  const changeHandler = event => {
+    setEntry({ [event.target.name]: event.target.value })
+}
+
+  const submitWord = event => {
+    event.preventDefault();
+    if (entry == conj) {
+      alert('Correct!')
+    } else {
+      alert('Incorrect :(')
+    }
+}
 
   return (
     <div className="verb">
@@ -70,12 +66,12 @@ function Verb() {
           id="verb"
           type="text"
           placeholder="Enter conjugated verb..."
+          onChange={changeHandler}
         />
         <input
           className="sub-button"
           type="submit"
-          value="Submit"
-
+          onSubmit={submitWord}
         />
       </form>
 
@@ -84,5 +80,3 @@ function Verb() {
 }
 
 export default Verb;
-
-//onSubmit={VerbCheck()}
