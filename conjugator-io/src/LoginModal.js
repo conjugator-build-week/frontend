@@ -12,7 +12,7 @@ class LoginModal extends Component {
         const { open, dimmer } = this.state;
 
         return(
-            <Container style={{width: '30%'}}>
+            <Container style={{width: '20%'}}>
                 {/* Login Button */}
                 <div name="login" onClick={this.show}>
                     Login

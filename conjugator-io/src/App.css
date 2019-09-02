@@ -31,3 +31,64 @@
     transform: rotate(360deg);
   }
 }
+
+.con-card {
+  margin: 3rem 15rem;
+  box-shadow: 1rem 1rem 1rem 1rem lightgrey;
+}
+
+.streak {
+  display: flex;
+  justify-content: center;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.verb {
+  padding: 0 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.verb-def {
+  display: flex;
+}
+
+.verb-entry {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  height: 2rem;
+  width: 100%;
+}
+
+.performer {
+  width: 35%;
+}
+
+.field {
+  width: 35%;
+}
+
+.sub-button {
+  width: 6rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+p {
+  padding: 1rem 0 0 0;
+}
+
+input {
+  margin: 0 2rem;
+  padding: 0rem;
+}
