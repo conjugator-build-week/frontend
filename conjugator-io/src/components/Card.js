@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 
 import Streak from './Streak.js';
 import Verb from './Verb.js';
