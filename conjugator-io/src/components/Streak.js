@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../App.css';
 
-function Streak() {
+function Streak(props) {
 
-  const [current, setCurrent] = useState(0);
-  const [best, setBest] = useState(0);
-  const [percentage, setPercentage] = useState(0);
+  const {
+    current,
+    best,
+    percentage
+  } = props;
+
+  // const [current, setCurrent] = useState(0);
+  // const [best, setBest] = useState(0);
+  // const [percentage, setPercentage] = useState(0);
 
   return (
     <div className="streak">

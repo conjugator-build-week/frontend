@@ -32,7 +32,7 @@ function SignupForm({ errors, touched, values, status }){
                 <Button type="submit" style={{width: "60%", margin: "0 auto", backgroundColor: "#3B5895"}}>Submit</Button>
             </Form>
             {members.map(member => (
-                alert(<p key={member.id}>Welcome, {member.name}</p>)
+                <p key={member.id}>Welcome, {member.name}</p>
             ))}
         </div>
     )

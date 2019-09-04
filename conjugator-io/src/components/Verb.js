@@ -5,6 +5,11 @@ import AccentLetters from './AccentLetters';
 import { Button } from './Buttons';
 
 function Verb(props) {
+  const {
+    value,
+    addAccent,
+    setValue
+  } = props;
 
   function getRandom(max) {
     return Math.floor(Math.random()*Math.floor(max));
@@ -27,7 +32,7 @@ function Verb(props) {
       setConj(obj[0]); //DONE
       const newArr = obj[1];
       const makeArr = newArr[0];
-      // console.log(makeArr);
+      console.log(makeArr);
       setInf(makeArr.infinitive); //DONE
       setTense(makeArr.tense); //DONE
       setDef(makeArr.translation); //DONE
@@ -40,26 +45,20 @@ function Verb(props) {
   }, [])
 
   console.log(conj);
+  console.log(value);
 
-  const [entry, setEntry] = useState({entry: ""}); //DONE
-  console.log(entry);
-
-  const {
-    value,
-    addAccent,
-    setValue
-  } = props;
-
-  const changeHandler = event => {
-    setEntry({ ...entry, entry: event.target.value })
+  const changeHandler = e => {
+    setValue(e.target.value);
   }
 
   const submitWord = event => {
     event.preventDefault();
-    if (entry === conj) {
-      alert('Correct!')
-    } else {
-      alert('Incorrect :(')
+    const userInput = value;
+
+    if(conj === userInput){
+      alert("Correct!!")
+    }else{
+      alert("Incorrect :(")
     }
   }
 
@@ -91,7 +90,7 @@ function Verb(props) {
               type="text"
               placeholder="Enter conjugated verb..."
               value={value}
-              onChange={e => setValue(e.target.value)}
+              onChange={changeHandler}
             />
           </div>
 
@@ -104,7 +103,6 @@ function Verb(props) {
           <button
             className="sub-button"
             type="submit"
-            value={entry}
             onClick={submitWord}
           >
             Submit
@@ -117,7 +115,8 @@ function Verb(props) {
         </Button>
       </form>
     </Container>
-  )
+  );
 }
+
 
 export default Verb;
