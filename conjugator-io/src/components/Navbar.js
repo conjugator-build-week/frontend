@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Container, Menu} from 'semantic-ui-react';
 import styled from 'styled-components';
 import LoginModal from './LoginModal';
@@ -18,11 +19,11 @@ class Navbar extends Component {
                 <Menu>
                     <Container>
                         <Menu.Header style={{color: '#3B5895'}} position="left">
-                            <NavHeader>Spanish Conjugator</NavHeader>
+                            <NavLink to="/"><NavHeader>Spanish Conjugator</NavHeader></NavLink>
                         </Menu.Header>
 
                         <Menu.Item position="right" style={{color: '#3B5895'}}>
-                            <LoginModal />
+                            <LoginModal /> 
                         </Menu.Item>
                     </Container>
                 </Menu>

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import AccentLetters from './AccentLetters';
+import { Button } from './Buttons';
 
 function Verb(props) {
 
@@ -18,6 +20,7 @@ function Verb(props) {
     axios.get("https://raw.githubusercontent.com/ghidinelli/fred-jehle-spanish-verbs/master/jehle_verb_lookup.json")
     .then(res => {
       const vari = Object.entries(res.data);
+      console.log(res.data);
       // console.log(vari[getRandom(1)]);
       const obj = vari[getRandom(1000)];
       setConj(obj[0]); //DONE
@@ -37,15 +40,16 @@ function Verb(props) {
 
   console.log(conj);
 
-  const [entry, setEntry] = useState(''); //DONE
+  const [entry, setEntry] = useState({entry: ""}); //DONE
+  console.log(entry);
 
   const changeHandler = event => {
-    setEntry({ ...entry, [event.target.name]: event.target.value })
+    setEntry({ ...entry, entry: event.target.value })
 }
 
   const submitWord = event => {
     event.preventDefault();
-    if (entry == conj) {
+    if (entry === conj) {
       alert('Correct!')
     } else {
       alert('Incorrect :(')
@@ -74,12 +78,20 @@ function Verb(props) {
           placeholder="Enter conjugated verb..."
           onChange={changeHandler}
         />
-        <input
+
+          <AccentLetters />
+        <Button>
+        <button
           className="sub-button"
           type="submit"
+          value={entry}
           onClick={submitWord}
-        />
+        >
+          Submit
+        </button>
         <button onClick={reLoad}>Next</button>
+        </Button>
+
       </form>
 
     </div>

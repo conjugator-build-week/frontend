@@ -3,7 +3,6 @@ import '../App.css';
 
 import Streak from './Streak.js';
 import Verb from './Verb.js';
-import Submit from './Submit';
 
 function Card() {
   return (
