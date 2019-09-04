@@ -1,24 +1,26 @@
 import React from 'react';
 import { Button } from './Buttons';
 
-function AccentLetters(){
-
+function AccentLetters(props){
+    const { addAccent } = props;
+    
+    
     return(
         <div className="accent-buttons">
             <Button>
-                <button type="button" value="á">
+                <button onClick={addAccent} value="á">
                     á
                 </button>
-                <button value="é">
+                <button onClick={addAccent} value="é">
                     é
                 </button>
-                <button value="í">
+                <button onClick={addAccent} value="í">
                     í
                 </button>
-                <button value="ñ">
+                <button onClick={addAccent} value="ñ">
                     ñ
                 </button>
-                <button value="ú">
+                <button onClick={addAccent} value="ú">
                     ú
                 </button>
             </Button>

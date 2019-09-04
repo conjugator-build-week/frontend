@@ -10,6 +10,6 @@ export const Button = styled.div`
         font-size: 1.2rem;
         border-radius: 5px;
         padding: 10px 15px;
-        background: #3B5895;
+        background-image: linear-gradient(blue, rgb(0, 56, 147));
     }
 `;
