@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import HomePage from './components/HomePage';
-import LoginModal from './components/LoginModal';
+import LoginModal from './components/login/LoginModal';
 import './App.css';
 
 function App() {

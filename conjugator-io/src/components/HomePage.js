@@ -1,9 +1,9 @@
 import React from 'react';
 import { Container } from 'semantic-ui-react';
 import styled from 'styled-components';
-import SignupForm from './SignupForm'
+import SignupForm from './signup/SignupForm'
 
-import Card from './Card.js';
+import Card from './conjugatorCard/Card.js';
 
 // Styled Components
 const StyledHeader = styled.h1`

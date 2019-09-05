@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Container, Menu} from 'semantic-ui-react';
 import styled from 'styled-components';
-import LoginModal from './LoginModal';
+import LoginModal from './login/LoginModal';
 
 // Styled Components
 const NavHeader = styled.h1`
@@ -16,13 +16,13 @@ class Navbar extends Component {
     render(){
         return(
             <div className="navbar">
-                <Menu>
+                <Menu style={{background: "#0000FF"}}>
                     <Container>
-                        <Menu.Header style={{color: '#3B5895'}} position="left">
-                            <NavLink to="/"><NavHeader>Spanish Conjugator</NavHeader></NavLink>
+                        <Menu.Header  position="left">
+                            <NavLink to="/"><NavHeader style={{color: 'white'}}>Spanish Conjugator</NavHeader></NavLink>
                         </Menu.Header>
 
-                        <Menu.Item position="right" style={{color: '#3B5895'}}>
+                        <Menu.Item position="right" style={{color: 'white'}}>
                             <LoginModal /> 
                         </Menu.Item>
                     </Container>

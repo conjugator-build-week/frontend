@@ -7,13 +7,16 @@ import Axios from 'axios';
 
 
 function SignupForm({ errors, touched, values, status }){
-    const [ members, setMembers ] = useState([]);
-    console.log(members);
+    const [ member, setMember ] = useState([]);
+    console.log(member);
     useEffect(() => {
         if(status){
-            setMembers([...members, status]);
+            setMember([...member, status]);
+            // alert(`Welcome, ${member.name}`)
         }
-    }, [status, members]);
+    }, [status, member]);
+
+
 
 
     return(
@@ -31,9 +34,9 @@ function SignupForm({ errors, touched, values, status }){
                 </label><br />
                 <Button type="submit" style={{width: "60%", margin: "0 auto", backgroundColor: "#3B5895"}}>Submit</Button>
             </Form>
-            {members.map(member => (
+            {/* {member.map(member => (
                 <p key={member.id}>Welcome, {member.name}</p>
-            ))}
+            ))} */}
         </div>
     )
 }
@@ -56,16 +59,12 @@ const FormikMemberForm = withFormik({
         Axios
             .post("https://reqres.in/api/users", values)
             .then(res => {
-                console.log("handleSubmit: then: res: ", res);
-                setStatus(res.data);
+                console.log("handleSubmit: then: res: ", res.data);
+                setStatus(res.data[0]);
 
             })
            .catch(err => console.log("handleSubmit: catch: err: ", err)); 
         
-            //     return(
-            // <p key={data.id}>Submit Successful!<br />
-            //     Welcome, {data.name}
-            // </p>)
     }
     }
     
