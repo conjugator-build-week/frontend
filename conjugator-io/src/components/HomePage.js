@@ -3,6 +3,8 @@ import { Container } from 'semantic-ui-react';
 import styled from 'styled-components';
 import SignupForm from './SignupForm'
 
+import Card from './Card.js';
+
 // Styled Components
 const StyledHeader = styled.h1`
     font-size: 2.4rem;
@@ -10,7 +12,7 @@ const StyledHeader = styled.h1`
     padding-top: 5%;
     margin-bottom: 0;
     line-height: 0;
-    
+
 `
 const HomepageContent = styled.p`
     margin: 0 auto;
@@ -37,6 +39,9 @@ export default function HomePage() {
         <div>
             <StyledHeader>Bienvenido al Spanish Conjugator!</StyledHeader><br />
             <h2>Verb practice made easy!</h2>
+
+            <Card />
+            
             <h2>Sign up now to track your progress<br />
                 and level up your language learning!
             </h2>

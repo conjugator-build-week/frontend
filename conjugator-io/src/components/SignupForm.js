@@ -4,6 +4,8 @@ import { Checkbox, Button } from 'semantic-ui-react';
 import * as Yup from 'yup';
 import Axios from 'axios';
 
+
+
 function SignupForm({ errors, touched, values, status }){
     const [ members, setMembers ] = useState([]);
     console.log(members);
@@ -11,10 +13,12 @@ function SignupForm({ errors, touched, values, status }){
         if(status){
             setMembers([...members, status]);
         }
-    }, [status]);
+    }, [status, members]);
+
+
     return(
         <div className="signupFormContainer">
-            <Form style={{display: "flex", flexDirection: "column", width: "80%", margin: "0 auto"}}>
+            <Form style={{display: "flex", flexDirection: "column", width: "70%", margin: "0 auto"}}>
                 <h2>Sign Up</h2>
                 {touched.name && errors.name && <p>{errors.name}</p>}
                 <Field type="text" name="name" placeholder="Full Name" style={{margin: "4% 0", boxSizing: "border-box", padding: "3% 0"}} />
@@ -25,10 +29,10 @@ function SignupForm({ errors, touched, values, status }){
                 <label>
                     <Checkbox label="Terms of Service" />
                 </label><br />
-                <Button style={{width: "60%", margin: "0 auto", backgroundColor: "#3B5895"}}>Submit</Button>
+                <Button type="submit" style={{width: "60%", margin: "0 auto", backgroundColor: "#3B5895"}}>Submit</Button>
             </Form>
             {members.map(member => (
-                <p key={member.id}>{member.name}</p>
+                <p key={member.id}>Welcome, {member.name}</p>
             ))}
         </div>
     )
@@ -54,10 +58,17 @@ const FormikMemberForm = withFormik({
             .then(res => {
                 console.log("handleSubmit: then: res: ", res);
                 setStatus(res.data);
+
             })
            .catch(err => console.log("handleSubmit: catch: err: ", err)); 
+        
+            //     return(
+            // <p key={data.id}>Submit Successful!<br />
+            //     Welcome, {data.name}
+            // </p>)
+    }
     }
     
-})(SignupForm);
+)(SignupForm);
 
 export default FormikMemberForm;

@@ -9,25 +9,25 @@ class LoginModal extends Component {
     close = () => this.setState({ open: false})
     
     render(){
-        const { open, dimmer } = this.state;
+        const { open } = this.state;
 
         return(
-            <Container style={{width: '30%'}}>
+            <Container style={{width: '40%'}}>
                 {/* Login Button */}
                 <div name="login" onClick={this.show}>
-                    Login
+                   Login 
                 </div>
 
 
                 <Modal 
-                    dimmer={dimmer} 
+                    dimmer={true} 
                     open={open} 
                     onClose={this.close}
                     style={{width: "40%"}}
                 >
                     <Modal.Header style={{textAlign: "center"}}>Login</Modal.Header>
                     <Modal.Content>
-                        <LoginForm />
+                        <LoginForm style={{margin: "0 auto"}} />
                     </Modal.Content>
                 </Modal>
 
