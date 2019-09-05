@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Checkbox, Form } from 'semantic-ui-react';
+// import { Button } from '../buttons/Buttons';
 
 const LoginForm = () => {
     return(
@@ -16,7 +17,7 @@ const LoginForm = () => {
                 <Checkbox label="Remember me" />
             </Form.Field>
             <div style={{margin: "0 auto"}}>
-            <Button style={{backgroundColor: "#3B5895"}} type="submit">Login</Button>
+            <Button type="submit">Login</Button>
             </div>
         </Form>
     )

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Container } from 'semantic-ui-react';
-import AccentLetters from './AccentLetters';
-import { Button } from './Buttons';
+import AccentLetters from '../buttons/AccentLetters';
+import { Button } from '../buttons/Buttons';
 
 function Verb(props) {
   const {
     value,
     addAccent,
-    setValue
+    setValue,
   } = props;
 
   function getRandom(max) {
@@ -32,7 +32,7 @@ function Verb(props) {
       setConj(obj[0]); //DONE
       const newArr = obj[1];
       const makeArr = newArr[0];
-      console.log(makeArr);
+      // console.log(makeArr);
       setInf(makeArr.infinitive); //DONE
       setTense(makeArr.tense); //DONE
       setDef(makeArr.translation); //DONE
@@ -80,7 +80,7 @@ function Verb(props) {
       </div>
 
       {/* Verb Entry */}
-      <form className="verb-entry">
+      <form onSubmit={submitWord} className="verb-entry">
         <div className="entry-accent">
           <div className="perf-entry">
             <p className="performer">{perf}</p>
@@ -91,6 +91,7 @@ function Verb(props) {
               placeholder="Enter conjugated verb..."
               value={value}
               onChange={changeHandler}
+              style={{border: "none", borderBottom: "3px solid #0000FF"}}
             />
           </div>
 
@@ -104,7 +105,7 @@ function Verb(props) {
             className="sub-button"
             type="submit"
             onClick={submitWord}
-          >
+            >
             Submit
           </button>
           <button 
