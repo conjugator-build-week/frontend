@@ -57,7 +57,7 @@ function Verb(props) {
 
     if(conj === userInput){
       alert("Correct!!")
-    }else{
+    }else if(conj !== userInput){
       alert("Incorrect :(")
     }
   }
