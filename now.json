@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "name": "conjugator-io",
+    "builds": [{ "src": "conjugator-io/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
+    "routes": [
+        { "src": "/(.*)", "dest": "conjugator-io/$1" }
+    ]
+}
